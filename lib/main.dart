@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vira_copo_drinking_game/controller/controlpage.dart';
 
 import 'home/homepage.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Vira Copo",
-      home: HomePage(),
+      home: ControlPage(),
     );
   }
 }

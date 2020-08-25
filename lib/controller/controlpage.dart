@@ -24,9 +24,8 @@ class _ControlPageState extends State<ControlPage> {
   @override
   Widget build(BuildContext context) {
     if (_controller == true){
-      return Game();
+      return new Game();
     }
-    _updateController(false);
     return HomePage(
       onGame: _updateController,
     );

@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vira copo Drinking Game :)"),
+        title: Text("0-60 Drinking Game :)"),
       ),
       body: _contentInHome(),
     );

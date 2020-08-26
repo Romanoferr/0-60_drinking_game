@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'globals.dart';
 import 'gamebutton.dart';
 import 'dart:math';
+import 'gamebuttonlist.dart';
+import 'globals.dart';
 
 class Grid extends StatelessWidget {
+
   Grid({
     this.extent,
     this.spacing,
@@ -13,38 +17,45 @@ class Grid extends StatelessWidget {
   static const double pad = 12;
   final double spacing;
   final int boxQuantity;
+  List<GameButton> gameButtonList = [];
+
+
 
   @override
   Widget build(BuildContext context) {
-    return _buildGrid();
+    Widget a = _buildGrid();
+    return GameButtonList(buttonList: gameButtonList, grid: Grid)
+    return a;
   }
 
   int chosenNumber(){
     Random random = new Random();
-    int chosenNumber = random.nextInt(boxQuantity);
+    int chosenNumber = random.nextInt(boxQuantity) + 1;
     print(chosenNumber);
     return chosenNumber;
   }
 
-  Widget _buildGrid() => GridView.extent(
+  Widget _buildGrid(
+      ) => GridView.extent(
         maxCrossAxisExtent: extent,
         padding: const EdgeInsets.all(pad),
         mainAxisSpacing: spacing,
         crossAxisSpacing: spacing,
-        children: _buildGridTileList(boxQuantity, chosenNumber()),
+        children: gameButtonList = (_buildGridTileList(boxQuantity, chosenNumber())),
       );
 
-  List<Container> _buildGridTileList(int count, int chosen) => List.generate(
-        count,
-        (i) => Container(
-          child: GameButton(
+  List<GameButton> _buildGridTileList(int count, int chosen)
+  => List.generate(count,
+        (i) => GameButton(
             number: i + 1,
             heightOfset: 40,
             borderRadius: 3,
             onPressed: () {},
             isChosen: (chosen == i+1) ? true: false,
             inPlay: true,
+            grid: Grid
           ),
-        ),
-      );
+        );
+
 }
+

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vira_copo_drinking_game/game/grid.dart';
-import 'package:vira_copo_drinking_game/home/homebutton.dart';
+
 
 class Game extends StatelessWidget {
 

@@ -8,6 +8,7 @@ class ControlPage extends StatefulWidget {
 }
 
 class _ControlPageState extends State<ControlPage> {
+
   bool _controller = false;
 
   void initState(){

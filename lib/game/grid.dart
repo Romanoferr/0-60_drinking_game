@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:vira_copo_drinking_game/home/homebutton.dart';
-
 import 'gamebutton.dart';
+import 'dart:math';
 
 class Grid extends StatelessWidget {
   Grid({
@@ -20,23 +19,29 @@ class Grid extends StatelessWidget {
     return _buildGrid();
   }
 
+  int chosenNumber(){
+    Random random = new Random();
+    int chosenNumber = random.nextInt(boxQuantity);
+    print(chosenNumber);
+    return chosenNumber;
+  }
+
   Widget _buildGrid() => GridView.extent(
         maxCrossAxisExtent: extent,
         padding: const EdgeInsets.all(pad),
         mainAxisSpacing: spacing,
         crossAxisSpacing: spacing,
-        children: _buildGridTileList(boxQuantity),
+        children: _buildGridTileList(boxQuantity, chosenNumber()),
       );
 
-  List<Container> _buildGridTileList(int count) => List.generate(
+  List<Container> _buildGridTileList(int count, int chosen) => List.generate(
         count,
         (i) => Container(
           child: GameButton(
-            number: "${i + 1}",
+            number: i + 1,
             onPressed: () {},
-            heightOfset: 30,
-            borderRadius: 2,
-            isChosen: false,
+            isChosen: (chosen == i+1) ? true: false,
+            inPlay: true,
           ),
         ),
       );

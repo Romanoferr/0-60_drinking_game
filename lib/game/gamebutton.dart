@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:vira_copo_drinking_game/game/dialogbox.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +35,7 @@ class _GameButtonState extends State<GameButton> {
     setState(() {
       widget.inPlay = inPlay;
     });
-    
+
   }
 
   bool isButtonDisable() {
@@ -44,11 +45,35 @@ class _GameButtonState extends State<GameButton> {
       return true;
   }
 
+  void _checkEndGame(bool chosen){
+    _updatePlay(false);
+    if(chosen == true){
+      _endGameAlert();
+    }
+  }
 
+  void _endGameAlert(){
+    Alert(
+      context: context,
+      type: AlertType.none,
+      title: "YOU LOST",
+      desc: "Get drunk!",
+      buttons: [
+        DialogButton(
+          child: Text(
+            "New Game",
+            style: TextStyle(color: Colors.white, fontSize: 20),
+          ),
+          onPressed: () => Navigator.pop(context),
+          color: Color.fromRGBO(0, 179, 134, 1.0),
+        ),
+      ],
+    ).show();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // print('${widget.number}, inPlay is ${widget.inPlay}');
+    print('${widget.number}, inPlay is ${widget.inPlay}');
     print('${widget.number}, chosen is ${widget.isChosen}');
 
 
@@ -58,7 +83,7 @@ class _GameButtonState extends State<GameButton> {
         color: Colors.blueGrey[200],
         disabledColor: Colors.redAccent,
         child: Text('${widget.number}'),
-        onPressed: isButtonDisable() ? null : () => _updatePlay(false),
+        onPressed: isButtonDisable() ? null : () => _checkEndGame(widget.isChosen),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(widget.borderRadius),

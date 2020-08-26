@@ -2,11 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:vira_copo_drinking_game/game/gamebuttonlist.dart';
-import 'package:vira_copo_drinking_game/game/grid.dart';
-
-import 'gamemain.dart';
-
 
 // ignore: must_be_immutable
 class GameButton extends StatefulWidget {
@@ -34,8 +29,6 @@ class GameButton extends StatefulWidget {
 
 class _GameButtonState extends State<GameButton> {
 
-
-
   @override
   void initState() {
     super.initState();
@@ -45,8 +38,8 @@ class _GameButtonState extends State<GameButton> {
   void _updatePlay(bool inPlay) {
     setState(() {
       widget.inPlay = inPlay;
-    });
-
+    }
+    );
   }
 
   bool isButtonDisable() {
@@ -62,7 +55,6 @@ class _GameButtonState extends State<GameButton> {
       _endGameAlert();
     }
   }
-
 
   void _endGameAlert(){
     Alert(
@@ -91,9 +83,7 @@ class _GameButtonState extends State<GameButton> {
 
   @override
   Widget build(BuildContext context) {
-
-    print('${widget.number}, chosen is ${widget.isChosen}');
-
+    //print('${widget.number}, chosen is ${widget.isChosen}');
 
     return SizedBox(
       height: widget.heightOfset,

@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'globals.dart';
 import 'gamebutton.dart';
 import 'dart:math';
-import 'gamebuttonlist.dart';
-import 'globals.dart';
+
 
 class Grid extends StatelessWidget {
 
@@ -48,8 +46,8 @@ class Grid extends StatelessWidget {
   => List.generate(count,
         (i) => new GameButton(
             number: i + 1,
-            heightOfset: 40,
-            borderRadius: 3,
+            heightOfset: 30,
+            borderRadius: 8,
             onPressed: () {},
             isChosen: (chosen == i+1) ? true: false,
             inPlay: true,

@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vira_copo_drinking_game/game/grid.dart';
 import 'package:vira_copo_drinking_game/home/homebutton.dart';
 
 class Game extends StatelessWidget {
 
-  List<Container> _buildGridTileList(int count) => List.generate(
+ /* List<Container> _buildGridTileList(int count) => List.generate(
       count, (i) => Container(
       child: HomeButton(text: "${i+1}",
       onPressed: () {},
@@ -20,6 +21,7 @@ class Game extends StatelessWidget {
       mainAxisSpacing: 8,
       crossAxisSpacing: 8,
       children: _buildGridTileList(80));
+      */
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class Game extends StatelessWidget {
         title: Text("Game Main Page"),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Center(child: _buildGrid()),
+      body: Center(child: Grid()),
     );
   }
 }

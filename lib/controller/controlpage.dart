@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:vira_copo_drinking_game/game/gamemain.dart';
 import 'package:vira_copo_drinking_game/home/homepage.dart';
 
@@ -25,7 +26,7 @@ class _ControlPageState extends State<ControlPage> {
   @override
   Widget build(BuildContext context) {
     if (_controller == true){
-      return new Game();
+      return Phoenix(child: Game());
     }
     return HomePage(
       onGame: _updateController,

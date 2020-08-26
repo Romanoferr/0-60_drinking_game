@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:vira_copo_drinking_game/game/gamebuttonlist.dart';
 import 'package:vira_copo_drinking_game/game/grid.dart';
 
+import 'gamemain.dart';
 
+
+// ignore: must_be_immutable
 class GameButton extends StatefulWidget {
 
   GameButton({
@@ -56,8 +60,6 @@ class _GameButtonState extends State<GameButton> {
     _updatePlay(false);
     if(chosen == true){
       _endGameAlert();
-    }else{
-      //chosenNumber = ;
     }
   }
 
@@ -74,18 +76,22 @@ class _GameButtonState extends State<GameButton> {
             "New Game",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => resetGame(),
           color: Color.fromRGBO(0, 179, 134, 1.0),
         ),
       ],
     ).show();
   }
 
+  void resetGame(){
+    Navigator.pop(context);
+    _updatePlay(true);
+    Phoenix.rebirth(context);
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    //print('${widget.number}, inPlay is ${widget.inPlay}');
     print('${widget.number}, chosen is ${widget.isChosen}');
 
 

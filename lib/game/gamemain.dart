@@ -14,9 +14,9 @@ class Game extends StatelessWidget {
         title: Text("Game Main Page"),
         backgroundColor: Color.fromRGBO(52, 138, 199, 1.0)
       ),
-      body: Center(child: Grid(
-        extent: 55,
-        boxQuantity: 30,
+      body: Center(child:new Grid(
+        extent: 80,
+        boxQuantity: 40,
         spacing: 8,
       ),
       ),

@@ -24,7 +24,7 @@ class Grid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget a = _buildGrid();
-    GameButtonList(buttonList: gameButtonList, grid: Grid);
+    //GameButtonList(buttonList: gameButtonList, grid: Grid);
     return a;
   }
 
@@ -41,12 +41,12 @@ class Grid extends StatelessWidget {
         padding: const EdgeInsets.all(pad),
         mainAxisSpacing: spacing,
         crossAxisSpacing: spacing,
-        children: gameButtonList = (_buildGridTileList(boxQuantity, chosenNumber())),
+        children:(_buildGridTileList(boxQuantity, chosenNumber())),
       );
 
   List<GameButton> _buildGridTileList(int count, int chosen)
   => List.generate(count,
-        (i) => GameButton(
+        (i) => new GameButton(
             number: i + 1,
             heightOfset: 40,
             borderRadius: 3,

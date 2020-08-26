@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:vira_copo_drinking_game/home/homebutton.dart';
 
+import 'gamebutton.dart';
+
 class Grid extends StatelessWidget {
   Grid({
     this.extent,
@@ -29,12 +31,12 @@ class Grid extends StatelessWidget {
   List<Container> _buildGridTileList(int count) => List.generate(
         count,
         (i) => Container(
-          child: HomeButton(
-            // change to game Button
-            text: "${i + 1}",
+          child: GameButton(
+            number: "${i + 1}",
             onPressed: () {},
             heightOfset: 30,
             borderRadius: 2,
+            isChosen: false,
           ),
         ),
       );

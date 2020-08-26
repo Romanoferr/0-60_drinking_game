@@ -8,8 +8,8 @@ class GameButton extends StatefulWidget {
     @required this.isChosen,
     @required this.onPressed,
     @required this.inPlay,
-    this.heightOfset = 30,
-    this.borderRadius = 4,
+    this.heightOfset,
+    this.borderRadius,
 
 });
   final int number;
@@ -47,7 +47,7 @@ class _GameButtonState extends State<GameButton> {
     return SizedBox(
       height: widget.heightOfset,
       child: RaisedButton(
-        color: widget.inPlay ? Colors.grey: Colors.redAccent,
+        color: widget.inPlay ? Colors.blueGrey[200]: Colors.redAccent,
         child: Text('${widget.number}'),
         onPressed: widget.onPressed,
         shape: RoundedRectangleBorder(

@@ -10,7 +10,7 @@ class Grid extends StatelessWidget {
   });
 
   final double extent;
-  static const double pad = 8;
+  static const double pad = 12;
   final double spacing;
   final int boxQuantity;
 
@@ -39,6 +39,8 @@ class Grid extends StatelessWidget {
         (i) => Container(
           child: GameButton(
             number: i + 1,
+            heightOfset: 40,
+            borderRadius: 3,
             onPressed: () {},
             isChosen: (chosen == i+1) ? true: false,
             inPlay: true,

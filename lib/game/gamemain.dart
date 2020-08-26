@@ -9,13 +9,13 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.lightBlueAccent[100],
       appBar: AppBar(
         title: Text("Game Main Page"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.deepPurple,
       ),
       body: Center(child: Grid(
-        extent: 60,
+        extent: 55,
         boxQuantity: 80,
         spacing: 8,
       )),

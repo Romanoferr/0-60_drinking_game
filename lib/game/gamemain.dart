@@ -16,9 +16,10 @@ class Game extends StatelessWidget {
       ),
       body: Center(child: Grid(
         extent: 55,
-        boxQuantity: 80,
+        boxQuantity: 30,
         spacing: 8,
-      )),
+      ),
+      ),
     );
   }
 }

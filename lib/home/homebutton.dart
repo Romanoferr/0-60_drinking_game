@@ -21,7 +21,11 @@ class HomeButton extends StatelessWidget {
     return SizedBox(
       height: heightOfset,
       child: RaisedButton(
-        child: Text(text),
+        child: Text(text,
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+        ),),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(

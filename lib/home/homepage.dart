@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vira_copo_drinking_game/controller/textform.dart';
 import 'package:vira_copo_drinking_game/game/gamemain.dart';
 import 'package:vira_copo_drinking_game/home/homebutton.dart';
 
@@ -21,12 +22,13 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           HomeButton(
-            text: "Novo Jogo",
+            text: "New Game",
             onPressed: _newGame,
             heightOfset: 50.0,
             borderRadius: 16.0,
           ),
-          SizedBox(height: 150.0),
+          SizedBox(height: 32.0),
+          MyCustomForm(),
         ],
       ),
     );
@@ -36,7 +38,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("0-60 Drinking Game :)"),
+        title: Text("0 - 45 Drinking Game :)"),
       ),
       body: _contentInHome(),
     );

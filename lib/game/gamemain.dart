@@ -6,11 +6,11 @@ import 'package:vira_copo_drinking_game/game/grid.dart';
 class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var boxq = 45;
+    final int boxQuantity = 45;
     return Scaffold(
       backgroundColor: Color.fromRGBO(209, 157, 239, 1.0),
       appBar: AppBar(
-        title: Text("0 - $boxq drink  v0.1   by Romano"),
+        title: Text("0 - $boxQuantity drink  v0.1   by Romano"),
         backgroundColor: Color.fromRGBO(52, 138, 199, 1.0),
         actions: [
           FlatButton(
@@ -27,7 +27,7 @@ class Game extends StatelessWidget {
       body: Center(
         child: new Grid(
           extent: 85,
-          boxQuantity: boxq,
+          boxQuantity: boxQuantity,
           spacing: 8,
         ),
       ),

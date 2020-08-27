@@ -5,7 +5,6 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 // ignore: must_be_immutable
 class GameButton extends StatefulWidget {
-
   GameButton({
     this.number,
     this.isChosen,
@@ -15,6 +14,7 @@ class GameButton extends StatefulWidget {
     this.borderRadius,
     this.grid,
   });
+
   final int number;
   final bool isChosen;
   final double heightOfset;
@@ -28,7 +28,6 @@ class GameButton extends StatefulWidget {
 }
 
 class _GameButtonState extends State<GameButton> {
-
   @override
   void initState() {
     super.initState();
@@ -38,8 +37,7 @@ class _GameButtonState extends State<GameButton> {
   void _updatePlay(bool inPlay) {
     setState(() {
       widget.inPlay = inPlay;
-    }
-    );
+    });
   }
 
   bool isButtonDisable() {
@@ -49,14 +47,14 @@ class _GameButtonState extends State<GameButton> {
       return true;
   }
 
-  void _checkEndGame(bool chosen){
+  void _checkEndGame(bool chosen) {
     _updatePlay(false);
-    if(chosen == true){
+    if (chosen == true) {
       _endGameAlert();
     }
   }
 
-  void _endGameAlert(){
+  void _endGameAlert() {
     Alert(
       context: context,
       type: AlertType.none,
@@ -75,7 +73,7 @@ class _GameButtonState extends State<GameButton> {
     ).show();
   }
 
-  void resetGame(){
+  void resetGame() {
     Navigator.pop(context);
     _updatePlay(true);
     Phoenix.rebirth(context);
@@ -90,8 +88,19 @@ class _GameButtonState extends State<GameButton> {
       child: RaisedButton(
         color: Colors.blueGrey[200],
         disabledColor: Colors.redAccent,
-        child: Text('${widget.number}'),
-        onPressed: isButtonDisable() ? null : () => _checkEndGame(widget.isChosen),
+        child: Text(
+          '${widget.number}',
+          style: TextStyle(fontSize: 18, color: Colors.black87, shadows: [
+            Shadow(
+              offset: Offset(0.3, 0.5),
+              blurRadius: 0.3,
+              color: Colors.black54,
+            )
+          ]
+          ),
+        ),
+        onPressed:
+            isButtonDisable() ? null : () => _checkEndGame(widget.isChosen),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(widget.borderRadius),

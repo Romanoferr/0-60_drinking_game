@@ -26,10 +26,11 @@ class _ControlPageState extends State<ControlPage> {
   @override
   Widget build(BuildContext context) {
     if (_controller == true){
-      return Phoenix(child: Game());
+      return Game();
     }
-    return HomePage(
+    return Phoenix (child: HomePage(
       onGame: _updateController,
+    )
     );
   }
 }

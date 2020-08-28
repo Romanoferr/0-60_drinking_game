@@ -11,13 +11,22 @@ class ControlPage extends StatefulWidget {
 class _ControlPageState extends State<ControlPage> {
 
   bool _controller = false;
+  int _number = 0;
 
-  void initState(){
+
+  void initState() {
     super.initState();
     _updateController(_controller);
+    _updateNumber(_number);
   }
 
-  void _updateController(bool controller){
+  void _updateNumber(int boxes){
+    setState(() {
+      _number = boxes;
+    });
+  }
+
+  void _updateController(bool controller) {
     setState(() {
       _controller = controller;
     });
@@ -25,11 +34,12 @@ class _ControlPageState extends State<ControlPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (_controller == true){
-      return Game();
+    if ((_controller == true) | (_number != 0)) {
+      return Game(boxQuantity: _number);
     }
-    return Phoenix (child: HomePage(
-      onGame: _updateController,
+    return Phoenix(
+        child: HomePage(
+      onGame: _updateController, boxCount: _updateNumber,
     )
     );
   }

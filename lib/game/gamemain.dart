@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:vira_copo_drinking_game/game/grid.dart';
 
+import '../main.dart';
+
 class Game extends StatelessWidget {
+  Game({this.boxQuantity = 45});
+
+  final int boxQuantity;
+
   @override
   Widget build(BuildContext context) {
-    final int boxQuantity = 45;
     return Scaffold(
       backgroundColor: Color.fromRGBO(209, 157, 239, 1.0),
       appBar: AppBar(
@@ -19,7 +24,7 @@ class Game extends StatelessWidget {
               style: TextStyle(fontSize: 18, color: Colors.white),
             ),
             onPressed: () {
-              Phoenix.rebirth(context);
+              Phoenix.rebirth(context); // reset ALL atributes back to the home page
             },
           ),
         ],

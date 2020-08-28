@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
+import '../main.dart';
+
 // ignore: must_be_immutable
 class GameButton extends StatefulWidget {
   GameButton({
@@ -76,7 +78,7 @@ class _GameButtonState extends State<GameButton> {
   void resetGame() {
     Navigator.pop(context);
     _updatePlay(true);
-    Phoenix.rebirth(context);
+    main();  // Back to Grid with new Chosen // no reset
   }
 
   @override
@@ -95,8 +97,8 @@ class _GameButtonState extends State<GameButton> {
               offset: Offset(0.3, 0.5),
               blurRadius: 0.3,
               color: Colors.black54,
-            )
-          ]
+            ),
+          ],
           ),
         ),
         onPressed:

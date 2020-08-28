@@ -17,13 +17,15 @@ class HomePage extends StatelessWidget {
   void newGame() {
     onGame(true);
   }
-  void boxCounter(){
-    boxCount(10);
+  void boxCounter(String boxes){
+    print('Number of boxes : $boxes');
+    boxCount(int.parse(boxes));
   }
 
   final myController = TextEditingController();
 
   Widget _contentInHome() {
+    Text boxes;
     return Padding(
       padding: EdgeInsets.all(50),
       child: Column(
@@ -73,7 +75,7 @@ class HomePage extends StatelessWidget {
                     heightOfset: 30.0,
                     borderRadius: 8.0,
                     onPressed: () {
-                      boxCounter();
+                      boxCounter(myController.text);
                     },
                   ),
                 ],

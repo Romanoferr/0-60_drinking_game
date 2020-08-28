@@ -34,7 +34,9 @@ class _ControlPageState extends State<ControlPage> {
 
   @override
   Widget build(BuildContext context) {
-    if ((_controller == true) | (_number != 0)) {
+    if (_controller == true){
+      return Game();
+    }else if(_number != 0){
       return Game(boxQuantity: _number);
     }
     return Phoenix(

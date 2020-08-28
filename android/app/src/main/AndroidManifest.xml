@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="vira_copo_drinking_game"
+        android:label="0-45 Drinking Game"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

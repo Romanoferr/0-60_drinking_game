@@ -14,7 +14,7 @@ class Game extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromRGBO(209, 157, 239, 1.0),
       appBar: AppBar(
-        title: Text("0 - $boxQuantity drink  v0.1   by Romano"),
+        title: Text("0 - $boxQuantity drink  v1.1   by Romano"),
         backgroundColor: Color.fromRGBO(52, 138, 199, 1.0),
         actions: [
           FlatButton(

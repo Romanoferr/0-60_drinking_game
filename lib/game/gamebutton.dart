@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import '../main.dart';
@@ -60,7 +59,8 @@ class _GameButtonState extends State<GameButton> {
         builder: (context) {
           return AlertDialog(
             elevation: 18.0,
-            content: Text('${widget.number} was the lucky number, DRINK!!',
+            content: Text("I mean, i guess you won, DRINK!!!",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
                 ),),
@@ -98,8 +98,12 @@ class _GameButtonState extends State<GameButton> {
     return SizedBox(
       height: widget.heightOfset,
       child: RaisedButton(
-        color: Color.fromRGBO(184, 228, 210, 1),
-        disabledColor: Colors.redAccent,
+        elevation: 6.0,
+        focusElevation: 2,
+        disabledElevation: 0,
+        disabledTextColor: Color.fromRGBO(231, 29, 46, 1),
+        color: Color.fromRGBO(208, 201, 195, 1),
+        disabledColor: Color.fromRGBO(231, 29, 46, 1),
         child: Text(
           '${widget.number}',
           style: TextStyle(

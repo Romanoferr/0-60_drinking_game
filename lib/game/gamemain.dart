@@ -40,9 +40,12 @@ class Game extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromRGBO(246, 207, 118, 1),
-          Color.fromRGBO(249, 131, 31, 1),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+          Color.fromRGBO(239, 235, 173, 1),
+          Color.fromRGBO(251, 230, 52, 1),
         ])),
         child: Center(
           child: new Grid(

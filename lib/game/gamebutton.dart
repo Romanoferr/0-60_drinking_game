@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-
 import '../main.dart';
 
 // ignore: must_be_immutable
@@ -14,7 +12,6 @@ class GameButton extends StatefulWidget {
     this.inPlay,
     this.heightOfset,
     this.borderRadius,
-    this.grid,
   });
 
   final int number;
@@ -22,7 +19,6 @@ class GameButton extends StatefulWidget {
   final double heightOfset;
   final double borderRadius;
   final VoidCallback onPressed;
-  final grid;
   bool inPlay;
 
   @override
@@ -30,6 +26,7 @@ class GameButton extends StatefulWidget {
 }
 
 class _GameButtonState extends State<GameButton> {
+
   @override
   void initState() {
     super.initState();
@@ -83,7 +80,6 @@ class _GameButtonState extends State<GameButton> {
 
   @override
   Widget build(BuildContext context) {
-    //print('${widget.number}, chosen is ${widget.isChosen}');
 
     return SizedBox(
       height: widget.heightOfset,

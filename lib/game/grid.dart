@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'gamebutton.dart';
 import 'dart:math';
 
-
 class Grid extends StatelessWidget {
-
   Grid({
     this.extent,
     this.spacing,
@@ -15,15 +13,7 @@ class Grid extends StatelessWidget {
   static const double pad = 12;
   final double spacing;
   final int boxQuantity;
-  List<GameButton> gameButtonList = [];
 
-
-
-  @override
-  Widget build(BuildContext context) {
-    Widget a = _buildGrid();
-    return a;
-  }
 
   int chosenNumber(){
     Random random = new Random();
@@ -50,9 +40,13 @@ class Grid extends StatelessWidget {
             onPressed: () {},
             isChosen: (chosen == i+1) ? true: false,
             inPlay: true,
-            grid: Grid
           ),
         );
 
+
+  @override
+  Widget build(BuildContext context) {
+    return _buildGrid();
+  }
 }
 

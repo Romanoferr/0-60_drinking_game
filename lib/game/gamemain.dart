@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:vira_copo_drinking_game/game/grid.dart';
 
-import '../main.dart';
 
 class Game extends StatelessWidget {
   Game({this.boxQuantity = 45});

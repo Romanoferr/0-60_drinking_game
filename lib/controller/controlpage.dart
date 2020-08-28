@@ -13,7 +13,6 @@ class _ControlPageState extends State<ControlPage> {
   bool _controller = false;
   int _number = 0;
 
-
   void initState() {
     super.initState();
     _updateController(_controller);

@@ -1,11 +1,5 @@
-import 'dart:async';
-import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:vira_copo_drinking_game/controller/controlpage.dart';
-import 'package:vira_copo_drinking_game/controller/textform.dart';
-import 'package:vira_copo_drinking_game/game/gamemain.dart';
 import 'package:vira_copo_drinking_game/home/homebutton.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,6 +11,7 @@ class HomePage extends StatelessWidget {
   void newGame() {
     onGame(true);
   }
+
   void boxCounter(String boxes){
     print('Number of boxes : $boxes');
     boxCount(int.parse(boxes));
@@ -25,7 +20,6 @@ class HomePage extends StatelessWidget {
   final myController = TextEditingController();
 
   Widget _contentInHome() {
-    Text boxes;
     return Padding(
       padding: EdgeInsets.all(50),
       child: Column(

@@ -84,7 +84,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("0 - 45 Drinking Game :)"),
+          backgroundColor: Color.fromRGBO(20, 93, 108, 1),
+        title: Text("0-25 Drinking Game :)"),
       ),
       body: _contentInHome(),
     );

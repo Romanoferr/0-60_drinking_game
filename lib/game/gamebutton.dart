@@ -26,7 +26,6 @@ class GameButton extends StatefulWidget {
 }
 
 class _GameButtonState extends State<GameButton> {
-
   @override
   void initState() {
     super.initState();
@@ -53,48 +52,67 @@ class _GameButtonState extends State<GameButton> {
     }
   }
 
-  void _endGameAlert() {
-    Alert(
-      context: context,
-      type: AlertType.none,
-      title: "YOU LOST",
-      desc: "Get drunk!",
-      buttons: [
-        DialogButton(
-          child: Text(
-            "New Game",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () => resetGame(),
-          color: Color.fromRGBO(0, 179, 134, 1.0),
-        ),
-      ],
-    ).show();
+  _endGameAlert() {
+    return showDialog(
+        barrierDismissible: false,
+        context: context,
+        // ignore: missing_return
+        builder: (context) {
+          return AlertDialog(
+            elevation: 18.0,
+            content: Text('${widget.number} was the lucky number, DRINK!!',
+                style: TextStyle(
+                  fontSize: 14,
+                ),),
+            title: Text(
+              "YOU LOST!! (${widget.number})",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Color.fromRGBO(0, 179, 134, 1.0),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            actions: [
+              DialogButton(
+                onPressed: () => resetGame(),
+                color: Color.fromRGBO(0, 179, 134, 1.0),
+                width: 150,
+                child: Text(
+                  "New Game",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ],
+          );
+        });
   }
 
   void resetGame() {
     Navigator.pop(context);
     _updatePlay(true);
-    main();  // Back to Grid with new Chosen // no reset
+    main(); // Back to Grid with new Chosen // no reset
   }
 
   @override
   Widget build(BuildContext context) {
-
     return SizedBox(
       height: widget.heightOfset,
       child: RaisedButton(
-        color: Colors.blueGrey[200],
+        color: Color.fromRGBO(184, 228, 210, 1),
         disabledColor: Colors.redAccent,
         child: Text(
           '${widget.number}',
-          style: TextStyle(fontSize: 18, color: Colors.black87, shadows: [
-            Shadow(
-              offset: Offset(0.3, 0.5),
-              blurRadius: 0.3,
-              color: Colors.black54,
-            ),
-          ],
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w300,
+            color: Colors.black87,
+            shadows: [
+              Shadow(
+                offset: Offset(0.3, 0.5),
+                blurRadius: 0.3,
+                color: Colors.black54,
+              ),
+            ],
           ),
         ),
         onPressed:
